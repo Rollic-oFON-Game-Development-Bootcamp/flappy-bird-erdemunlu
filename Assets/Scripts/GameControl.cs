@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class GameControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject startPanel;
+    public GameObject flappyBird;
+
+    public void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!startPanel.activeSelf)
+            {
+                startPanel.SetActive(false);
+            }
+            else
+            {
+                startPanel.SetActive(false);
+            }
+        }
     }
 }
