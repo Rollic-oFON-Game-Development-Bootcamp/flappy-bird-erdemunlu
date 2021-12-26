@@ -11,7 +11,7 @@ public class GameControl : MonoBehaviour
 
     public void Start()
     {
-        
+        flappyBirdRigidBody.isKinematic = true;
     }
 
     public void Update()
@@ -25,6 +25,7 @@ public class GameControl : MonoBehaviour
             else
             {
                 startPanel.SetActive(false);
+                flappyBirdRigidBody.isKinematic = false;
             }
         }
     }
