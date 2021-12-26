@@ -7,6 +7,7 @@ public class GameControl : MonoBehaviour
 
     public GameObject startPanel;
     public GameObject flappyBird;
+    public Rigidbody2D flappyBirdRigidBody;
 
     public void Start()
     {
@@ -19,12 +20,17 @@ public class GameControl : MonoBehaviour
         {
             if (!startPanel.activeSelf)
             {
-                startPanel.SetActive(false);
+                MoveFlappyBird();
             }
             else
             {
                 startPanel.SetActive(false);
             }
         }
+    }
+
+    public void MoveFlappyBird()
+    {
+        flappyBirdRigidBody.velocity = Vector2.up;
     }
 }
