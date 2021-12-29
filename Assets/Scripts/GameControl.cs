@@ -8,14 +8,18 @@ public class GameControl : MonoBehaviour
     public GameObject startPanel;
     public GameObject flappyBird;
     public Rigidbody2D flappyBirdRigidBody;
+    public float speedMultiplier = 1200F;
+
 
     public void Start()
     {
         flappyBirdRigidBody.isKinematic = true;
     }
 
+    
     public void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             if (!startPanel.activeSelf)
@@ -28,10 +32,11 @@ public class GameControl : MonoBehaviour
                 flappyBirdRigidBody.isKinematic = false;
             }
         }
+        
     }
 
     public void MoveFlappyBird()
     {
-        flappyBirdRigidBody.velocity = Vector2.up;
+        flappyBirdRigidBody.AddForce(Vector2.up * speedMultiplier);
     }
 }
